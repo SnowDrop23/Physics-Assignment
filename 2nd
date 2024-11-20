@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+    int gM = 3; // order of green light
+    int gWL = 530; // wave length of green light
+    int rM = 2; // order of red light
+    int rWL = 700; // wave length of red light
+
+    float angle = 65.0 * M_PI / 180.0; // converting degree to radiun
+    float gD =(gM * gWL) / sin(angle); // calculating diffraction grating spacing(d)
+    float sine = (float)(rM * rWL) / gD; // calculating bright spot of red light of 2nd order
+    float redAngle = asin(sine) * 180.0 / M_PI;
+    printf("%.2f", redAngle); 
+
+}
