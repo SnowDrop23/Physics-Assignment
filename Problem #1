@@ -5,14 +5,24 @@ int main ()
     float b, a[3]; // b for wavelength in nm
     int m;
     int min = 0;
-    scanf("%f %d", &b, &m);
+    printf("Enter wavelength in nm: ");
+    scanf("%f", &b);
+    printf("Enter order of fringe: ");
+    scanf("%d", &m);
+    
+   
+    
     
     if(b < 380.0 || b > 780.0) 
     {
         printf("Out of the range.Please enter a valid number.\n");
         return 0;
     }
-    for(int i = 0; i < 3; i++) scanf("%f", &a[i]);
+    for(int i = 0; i < 3; i++)
+    {
+        printf("Enter slit width: ");
+        scanf("%f", &a[i]);
+    }
     for(int i = 0; i < 3; i++) if(a[i] < a[min]) min = i;
     printf("Slit %d will bent the light more.\n", min + 1);
 }
